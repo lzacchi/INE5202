@@ -10,13 +10,13 @@ function falsa_pos
 
     % Assumindo que o intervalo possui raizes
     a = 0;
-    b = 2;
+    b = 1;
 
     fa = f(a);
     fb = f(b);
 
-    x=[0:0.1:2];  % vetor de pontos [0, 0.1, 0.2, ..., 1.0]
-    y = f(x);
+    % x=[0:0.1:2];  % vetor de pontos [0, 0.1, 0.2, ..., 1.0]
+    % y = f(x);
 
     % plot(x,y)  % plotar grafico da curva
     % grid
@@ -25,7 +25,7 @@ function falsa_pos
     xm = a - ( (fa * (b-a)) / (fb-fa) );
     fxm = f(xm);
 
-    prec = 10^-10;  % precisao do fator de erro
+    prec = 10^-5;  % precisao do fator de erro
     i = 0;  % numero de iteracoes
 
     while(abs(fxm) > prec)
@@ -33,7 +33,7 @@ function falsa_pos
         xm = a - ( (fa * (b-a)) / (fb-fa) );  % aproximacao da raiz
         fxm = f(xm);
 
-        reta = fa + ((fb-fa)/(b-a) * (x-a));
+        % reta = fa + ((fb-fa)/(b-a) * (x-a));
 
         % plot(x, reta, 'r')  % plotar grafico da reta
         % hold on
@@ -45,8 +45,8 @@ function falsa_pos
             % fator de proporcao do ponto fixo
             % em relacao ao outro ponto
             % Força a mudança dos intervalos
-            pa = fb/(fb + fxm);
-            fa = fa * pa;
+            % pa = fb/(fb + fxm);
+            % fa = fa * pa;
 
             b = xm;
             fb = fxm;
@@ -55,8 +55,8 @@ function falsa_pos
             % fator de proporcao do ponto fixo
             % em relacao ao outro ponto
             % Força a mudança dos intervalos
-            pb = fa/(fa + fxm);
-            fb = fb * pb;
+            % pb = fa/(fa + fxm);
+            % fb = fb * pb;
 
             a = xm;
             fa = fxm;
@@ -71,5 +71,6 @@ function falsa_pos
 endfunction
 
 function f = f(x)
-    f = exp(x) -2 * cos(x);
+    % c(x) = 10 − 20(e^−0.2x − e^−0.75x)
+    f = 10 - 20 * (exp(-0.2*x) - exp(-0.75*x))-5;
 endfunction

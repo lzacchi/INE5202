@@ -10,12 +10,12 @@ function bissecao
 
     % Assumindo que o intervalo possui raizes
     a = 0;
-    b = 2;
+    b = 1;
 
     xm = (a+b)/2;
     fxm = f(xm);
 
-    prec = 10^-10;  % precisao do fator de erro
+    prec = 10^-5;  % precisao do fator de erro
     i = 0;  % numero de iteracoes
 
     while(abs(fxm) > prec)
@@ -35,10 +35,11 @@ function bissecao
 
     iteracoes = i   % numero de iteracoes
     raiz = xm       % raiz
-    precisao = f(xm)  % precisao
+    precisao = abs(f(xm))  % precisao
 
 endfunction
 
-function y = f(x)
-    y = exp(x) - 2 * cos(x);
+function f = f(x)
+    % c(x) = 10 − 20(e^−0.2x − e^−0.75x)
+    f = 10 - 20 * (exp(-0.2*x) - exp(-0.75*x))-5;
 endfunction

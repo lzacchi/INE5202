@@ -8,17 +8,17 @@ function newton
     clc
     format long
 
-    a = 0;
-    b = 2;
+    % a = 0;
+    % b = 2;
 
-    x = [a:0.1:b];
-    y = f(x);
+    % x = [a:0.1:b];
+    % y = f(x);
 
-    plot(x,y)
-    grid
-    hold on
+    % plot(x,y)
+    % grid
+    % hold on
 
-    x0 = 0;  % estimativa inicial
+    x0 = 1;  % estimativa inicial
 
     i = 0;  % numero de iteracoes
 
@@ -30,16 +30,16 @@ function newton
     while (abs(fx) > prec)
         ++i;
 
-        r = dfx * (x-x0) + fx;  % reta tangente em x0
-        plot(x,r, 'r')
-        hold on
-        pause
+        % r = dfx * (x-x0) + fx;  % reta tangente em x0
+        % plot(x,r, 'r')
+        % hold on
+        % pause
 
         xi = x0 - fx/dfx;
         x0 = xi;
         fx = f(x0);
         dfx = df(x0);
-    end
+    endwhile
 
     iteracoes = i
     raiz = xi
@@ -48,9 +48,10 @@ endfunction
 
 
 function f = f(x)
-    f = exp(x) - 2 * cos(x);
+    % c(x) = 10 − 20(e^−0.2x − e^−0.75x)
+    f = 10 - 20 * (exp(-0.2*x) - exp(-0.75*x))-5;
 endfunction
 
 function df = df(x)
-    df = exp(x) + 2 * sin(x);
+    df = -20 * (0.75 * e ^ (-0.75 * x) - 0.2 * e ^(-0.2 * x));
 endfunction

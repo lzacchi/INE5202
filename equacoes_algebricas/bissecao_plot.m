@@ -53,5 +53,6 @@ function bissecao_plot
 endfunction
 
 function f = f(x)
-    f = exp(x) -2 * cos(x);
+    % c(x) = 10 − 20(e^−0.2x − e^−0.75x)
+    f = 10 - (20 * (e^(0.2*x) - e^(-0.75 * x)));
 endfunction
