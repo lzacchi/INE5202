@@ -1,26 +1,22 @@
-## Função: e^x - 2cos(x)
+## Função: 10 - 20 * (exp(-0.2 * x) - exp(-0.75 * x))-5
 
 ### Bisseção:
-  - iterações = 34
-  - raíz = 0.539785160799511
-  - precisão = 2.680522470654978e-11
+  - iteracoes = 14
+  - raiz = 0.602355957031250
+  - precisao = 2.956754842742271e-06
+
 
 ### Falsa Posição:
-  - iterações = 36
-  - raíz = 0.539785160781877
-  - precisão = 7.518408118301068e-11
-
-### Falsa Posição Modificado:
-  - iterações = 6  (!!!!)
-  - raíz = 0.539785160791184
-  - precisão = 4.965072797347148e-11
+  - iteracoes = 10
+  - raiz = 0.602356649948532
+  - precisao = 7.115314839545306e-06
 
 ### Newton:
-  - iteracoes = 6
-  - raiz = 0.539785160809281
-  - precisao = 2.220446049250313e-16
+  - iteracoes = 4
+  - raiz = 0.602355464172032
+  - precisao = 1.153683371057923e-09
 
 ### Secante:
-  - iterações = 6
-  - raíz = 0.539785160831440
-  - precisão = 6.079270420400462e-11
+  - iteracoes = 7
+  - raiz = 0.602355321501526
+  - precisao = 8.573950482926307e-07

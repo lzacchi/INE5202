@@ -23,7 +23,7 @@ function secante
 
     i = 0;  % numero de iteracoes
 
-    prec = 10^-10;
+    prec = 10^-5;
 
     f0 = f(x0);
     f1 = f(x1);

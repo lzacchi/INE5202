@@ -22,7 +22,7 @@ function newton
 
     i = 0;  % numero de iteracoes
 
-    prec = 10^-10;
+    prec = 10^-5;
 
     fx = f(x0);
     dfx = df(x0);
