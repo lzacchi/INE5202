@@ -9,13 +9,13 @@ function bissecao
     format long
 
     % Assumindo que o intervalo possui raizes
-    a = 0;
-    b = 1;
+    a = 3.2;
+    b = 4;
 
     xm = (a+b)/2;
     fxm = f(xm);
 
-    prec = 10^-5;  % precisao do fator de erro
+    prec = 0.00005;  % precisao do fator de erro
     i = 0;  % numero de iteracoes
 
     while(abs(fxm) > prec)
@@ -41,5 +41,6 @@ endfunction
 
 function f = f(x)
     % c(x) = 10 − 20(e^−0.2x − e^−0.75x)
-    f = 10 - 20 * (exp(-0.2*x) - exp(-0.75*x))-5;
+    % f = 10 - 20 * (exp(-0.2*x) - exp(-0.75*x))-5;
+    f = x^3 - 7*x^2 + 14*x -6;
 endfunction

@@ -22,7 +22,7 @@ function newton
 
     i = 0;  % numero de iteracoes
 
-    prec = 10^-5;
+    prec = 10^-6;
 
     fx = f(x0);
     dfx = df(x0);
@@ -49,9 +49,11 @@ endfunction
 
 function f = f(x)
     % c(x) = 10 − 20(e^−0.2x − e^−0.75x)
-    f = 10 - 20 * (exp(-0.2*x) - exp(-0.75*x))-5;
+    % f = 10 - 20 * (exp(-0.2*x) - exp(-0.75*x))-5;
+    f = exp(x) - 4*x^2;
 endfunction
 
 function df = df(x)
-    df = -20 * (0.75 * e ^ (-0.75 * x) - 0.2 * e ^(-0.2 * x));
+    % df = -20 * (0.75 * e ^ (-0.75 * x) - 0.2 * e ^(-0.2 * x));
+    df = exp(x) - 8*x;
 endfunction

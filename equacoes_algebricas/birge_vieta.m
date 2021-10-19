@@ -9,9 +9,11 @@ function birge_vieta
 
 
     % P3(x) = x3 + 3x - 5
-    coef = [1, 0, 3, -5];
+    % coef = [1, 0, 3, -5];
+    % P3(x)= 6x3 - 5x2 - 3x + 2
+    coef = [6, -5, -3, 2];
     n = length(coef);
-    x0 = -1 -i;  % estimativa inicial
+    x0 = 2;  % estimativa inicial
     i = 0;
     prec = 10^-7;
 
@@ -35,6 +37,8 @@ function birge_vieta
 
     iteracoes = i
     raiz = x0
+    sequencia_b = b
+    sequencia_C = c
     precisao = b(n)
 
 endfunction

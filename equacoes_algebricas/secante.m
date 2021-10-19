@@ -18,12 +18,12 @@ function secante
     # grid
     # hold on
 
-    x0 = 1;  % estimativa inicial
-    x1 = 2;
+    x0 = 10000;  % estimativa inicial
+    x1 = 15000;
 
     i = 0;  % numero de iteracoes
 
-    prec = 10^-5;
+    prec = 10^-20;
 
     f0 = f(x0);
     f1 = f(x1);
@@ -51,6 +51,5 @@ endfunction
 
 
 function f = f(x)
-    % c(x) = 10 − 20(e^−0.2x − e^−0.75x)
-    f = 10 - 20 * (exp(-0.2*x) - exp(-0.75*x))-5;
+    f = (((980 * 75000)/x) * (1 - exp(-x*6/75000)))/-3600;
 endfunction
